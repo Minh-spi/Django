@@ -19,7 +19,7 @@ from django.urls import path
 from django.urls import path, include
 urlpatterns = [
         path('admin/', admin.site.urls),
-    path('d3app/', include('django_app.urls')),  # Include URL của d3app
+    path('django_app/', include('django_app.urls')),  # Include URL của d3app
 ]
 
 
