@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('order_id', models.CharField(max_length=10, primary_key=True, serialize=False)),
                 ('order_time', models.DateTimeField()),
-                ('customer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='d3app.customer')),
+                ('customer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_app.customer')),
             ],
         ),
         migrations.CreateModel(
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('product_code', models.CharField(max_length=10, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=100)),
                 ('unit_price', models.IntegerField()),
-                ('group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='d3app.productgroup')),
+                ('group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_app.productgroup')),
             ],
         ),
         migrations.CreateModel(
@@ -49,8 +49,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('quantity', models.IntegerField()),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='d3app.order')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='d3app.product')),
+                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_app.order')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_app.product')),
             ],
             options={
                 'unique_together': {('order', 'product')},
